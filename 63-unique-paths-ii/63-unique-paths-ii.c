@@ -17,14 +17,14 @@ int uniquePathsWithObstacles(int ** obstacleGrid, int obstacleGridSize, int* obs
     int upNodeNumOfPaths = 0,leftNodeNumOfPaths = 0;
     int retNumOfPaths;
     int * numOfPathsArray = (int *) malloc(sizeof(int) * obstacleGridSize * (*obstacleGridColSize));
-    printf("pointer: %p\n",numOfPathsArray);
-    printf("%d %d\n",obstacleGridSize,*obstacleGridColSize);
+    //printf("pointer: %p\n",numOfPathsArray);
+    //printf("%d %d\n",obstacleGridSize,*obstacleGridColSize);
     /*iterate obstacleGrid*/
     for(row = 0;row < obstacleGridSize;row++)
     {
         for(col = 0;col < *obstacleGridColSize;col++)
         {
-            printf("obstacleGrid[%d][%d]:%d - ",row,col,obstacleGrid[row][col]);
+            //printf("obstacleGrid[%d][%d]:%d - ",row,col,obstacleGrid[row][col]);
             /*check current node not to be an obstacle*/
             if(obstacleGrid[row][col] != 1)
             {
@@ -63,9 +63,9 @@ int uniquePathsWithObstacles(int ** obstacleGrid, int obstacleGridSize, int* obs
                 /*do nothing current node is an obstacle*/
                 *(numOfPathsArray + (row * (*obstacleGridColSize)) + col) = 0;
             }
-            printf("numOfPathsArray[%d][%d]:%d |",row,col,(*(numOfPathsArray + (row * (*obstacleGridColSize)) + col)));
+            //printf("numOfPathsArray[%d][%d]:%d |",row,col,(*(numOfPathsArray + (row * (*obstacleGridColSize)) + col)));
         }
-        printf("\n");
+        //printf("\n");
     }
     retNumOfPaths = *(numOfPathsArray +  (obstacleGridSize * (*obstacleGridColSize)) - 1);
     free(numOfPathsArray);
