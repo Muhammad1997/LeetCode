@@ -16,7 +16,7 @@ int uniquePathsWithObstacles(int ** obstacleGrid, int obstacleGridSize, int* obs
     int row,col;
     int upNodeNumOfPaths = 0,leftNodeNumOfPaths = 0;
     int retNumOfPaths;
-    int numOfRows = obstacleGridSize,numOfCol = *obstacleGridColSize;
+    const int numOfRows = obstacleGridSize,numOfCol = *obstacleGridColSize;
     int * numOfPathsArray = (int *) malloc(sizeof(int) * numOfRows * numOfCol);
     /*iterate obstacleGrid*/
     for(row = 0;row < numOfRows;row++)
